@@ -11,9 +11,17 @@ namespace WordCount.WebService
     using Microsoft.Owin.StaticFiles;
     using Owin;
     using WordCount.Common;
+    using System.Fabric;
 
     public class Startup : IOwinAppBuilder
     {
+        private readonly ICodePackageActivationContext activationContext;
+
+        public Startup(ICodePackageActivationContext activationContext)
+        {
+            this.activationContext = activationContext;
+        }
+
         public void Configuration(IAppBuilder appBuilder)
         {
             System.Net.ServicePointManager.DefaultConnectionLimit = 256;
@@ -33,7 +41,7 @@ namespace WordCount.WebService
             fileOptions.StaticFileOptions.ServeUnknownFileTypes = true;
 
             config.MapHttpAttributeRoutes();
-
+            UnityConfig.RegisterComponents(config, this.activationContext);
             appBuilder.UseWebApi(config);
             appBuilder.UseFileServer(fileOptions);
         }

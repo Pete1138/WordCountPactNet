@@ -17,8 +17,8 @@ namespace WordCount.WebService
     {
         private HttpClient httpClient = new HttpClient();
 
-        public HttpCommunicationClientFactory(IServicePartitionResolver resolver = null, IEnumerable<IExceptionHandler> exceptionHandlers = null)
-            : base(resolver, CreateExceptionHandlers(exceptionHandlers))
+        public HttpCommunicationClientFactory(IServicePartitionResolver resolver)
+            : base(resolver, CreateExceptionHandlers(null))
         {
         }
 

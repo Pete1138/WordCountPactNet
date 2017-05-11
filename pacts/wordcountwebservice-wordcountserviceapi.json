@@ -1,0 +1,35 @@
+{
+  "provider": {
+    "name": "WordCountServiceApi"
+  },
+  "consumer": {
+    "name": "WordCountWebService"
+  },
+  "interactions": [
+    {
+      "description": "a request with the word 'Aardvark'",
+      "provider_state": "there is a count of 1 for words beginning with 'A'",
+      "request": {
+        "method": "put",
+        "path": "/AddWord/Aardvark",
+        "headers": {
+          "Content-Length": "0",
+          "Content-Type": "text/plain; charset=utf-8",
+          "Host": "localhost:1234"
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application-json; charset=utf-8"
+        },
+        "body": {
+          "Content": "A"
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecificationVersion": "1.1.0"
+  }
+}

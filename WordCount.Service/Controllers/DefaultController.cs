@@ -54,7 +54,7 @@ namespace WordCountService.Controllers
                 await tx.CommitAsync();
             }
 
-            return this.Ok();
+            return this.Ok(word[0]); // returns the first character of the word
         }
     }
 }
