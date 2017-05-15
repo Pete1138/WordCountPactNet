@@ -53,7 +53,8 @@ namespace Consumer.Tests
                     },
                     Body = new
                     {
-                        Content = "A"
+                        Letter = "A",
+                        Count = "2"
                     }
                 });
 

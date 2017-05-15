@@ -160,6 +160,6 @@
     <Error Condition="!Exists('..\packages\xunit.runner.visualstudio.2.2.0\build\net20\xunit.runner.visualstudio.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\xunit.runner.visualstudio.2.2.0\build\net20\xunit.runner.visualstudio.props'))" />
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>xcopy $(ProjectDir)bin\pacts\*.json $(SolutionDir)\pacts\</PostBuildEvent>
+    <PostBuildEvent>rem xcopy $(ProjectDir)bin\pacts\wordcountwebservice-wordcountserviceapi.json $(SolutionDir)pacts\wordcountwebservice-wordcountserviceapi.json</PostBuildEvent>
   </PropertyGroup>
 </Project>
